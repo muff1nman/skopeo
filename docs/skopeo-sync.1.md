@@ -128,6 +128,7 @@ registry.example.com:
         redis:
             - "1.0"
             - "2.0"
+            - "sha256:0000000000000000000000000000000011111111111111111111111111111111"
     credentials:
         username: john
         password: this is a secret
@@ -142,7 +143,7 @@ quay.io:
 
 This will copy the following images:
 - Repository `registry.example.com/busybox`: all images, as no tags are specified.
-- Repository `registry.example.com/redis`: images tagged "1.0" and "2.0".
+- Repository `registry.example.com/redis`: images tagged "1.0" and "2.0" along with image with digest "sha256:0000000000000000000000000000000011111111111111111111111111111111".
 - Repository `quay.io/coreos/etcd`: images tagged "latest".
 
 For the registry `registry.example.com`, the "john"/"this is a secret" credentials are used, with server TLS certificates located at `/home/john/certs`.

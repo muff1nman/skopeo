@@ -109,7 +109,7 @@ func (s *SyncSuite) TestDocker2DirTagged(c *check.C) {
 	c.Assert(err, check.IsNil)
 
 	// copy docker => dir
-	assertSkopeoSucceeds(c, "", "copy", "docker://"+image, "dir:"+dir2)
+	assertSkopeoSucceeds(c, "", "copy", "--all", "docker://"+image, "dir:"+dir2)
 	_, err = os.Stat(path.Join(dir2, "manifest.json"))
 	c.Assert(err, check.IsNil)
 
